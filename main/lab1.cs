@@ -9,50 +9,58 @@ public class lab1
 {
     public static void system_info()
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("=== CHƯƠNG TRÌNH THÔNG TIN HỆ THỐNG CHI TIẾT ===");
-        Console.WriteLine("------------------------------------------------");
+        Console.OutputEncoding = Encoding.UTF8;
 
-        // --- THÔNG TIN MÔI TRƯỜNG & HĐH ---
-        Console.WriteLine("[1] MÔI TRƯỜNG HỆ ĐIỀU HÀNH");
-        Console.WriteLine($"  - Hệ điều hành (OS Version): {Environment.OSVersion}");
-        Console.WriteLine($"  - Nền tảng 64-bit: {Environment.Is64BitOperatingSystem}");
-        Console.WriteLine($"  - Tên máy (Machine Name): {Environment.MachineName}");
-        Console.WriteLine($"  - Người dùng hiện tại: {Environment.UserName}");
-        Console.WriteLine($"  - Thư mục hệ thống: {Environment.SystemDirectory}");
-        Console.WriteLine();
+        int col1 = 35;
+        int col2 = 55;
 
-        // --- TÀI NGUYÊN PHẦN CỨNG ---
-        Console.WriteLine("[2] TÀI NGUYÊN HỆ THỐNG (CPU & RAM)");
-        // Số lượng bộ xử lý logic (Logical Processors)
-        Console.WriteLine($"  - Số lượng vi xử lý (Processors): {Environment.ProcessorCount}");
-        // Kích thước trang bộ nhớ (Page Size)
-        Console.WriteLine($"  - Kích thước trang bộ nhớ (Page Size): {Environment.SystemPageSize} bytes");
-        // Thời gian máy đã chạy từ lúc khởi động (Tick Count)
-        Console.WriteLine($"  - Thời gian máy đã chạy (Uptime): {Environment.TickCount / 60000} phút");
-        Console.WriteLine();
+        void Line()
+        {
+            Console.WriteLine("+" + new string('-', col1) + "+" + new string('-', col2) + "+");
+        }
 
-        // --- HỆ THỐNG TẬP TIN & I/O ---
-        Console.WriteLine("[3] HỆ THỐNG LƯU TRỮ (DISK I/O)");
-        Console.WriteLine($"  - Thư mục làm việc hiện tại: {Environment.CurrentDirectory}");
-        Console.WriteLine("  - Danh sách các ổ đĩa logic:");
+        void Row(string left, string right)
+        {
+            Console.WriteLine("|" + left.PadRight(col1) + "|" + right.PadRight(col2) + "|"
+            );
+        }
 
-        // Lấy danh sách ổ đĩa
+        // MÔI TRƯỜNG HỆ ĐIỀU HÀNH
+        Line();
+        Row("MÔI TRƯỜNG HỆ ĐIỀU HÀNH", "");
+        Line();
+        Row("Hệ điều hành", Environment.OSVersion.ToString());
+        Row("Nền tảng 64-bit", Environment.Is64BitOperatingSystem.ToString());
+        Row("Tên máy", Environment.MachineName);
+        Row("Người dùng hiện tại", Environment.UserName);
+        Row("Thư mục hệ thống", Environment.SystemDirectory);
+        Line();
+
+        // CPU & RAM
+        Row("TÀI NGUYÊN HỆ THỐNG", "");
+        Line();
+        Row("Số vi xử lý logic", Environment.ProcessorCount.ToString());
+        Row("Kích thước trang bộ nhớ", $"{Environment.SystemPageSize} bytes");
+        Row("Thời gian chạy (Uptime)",
+            $"{Environment.TickCount / 60000} phút");
+        Line();
+
+        // DISK
+        Row("HỆ THỐNG LƯU TRỮ", "");
+        Line();
+
         DriveInfo[] drives = DriveInfo.GetDrives();
         foreach (DriveInfo drive in drives)
         {
-            if (drive.IsReady)
-            {
-                double totalSize = drive.TotalSize / (1024.0 * 1024.0 * 1024.0);
-                double freeSpace = drive.AvailableFreeSpace / (1024.0 * 1024.0 * 1024.0);
+            if (!drive.IsReady) continue;
 
-                Console.WriteLine($"    + Ổ {drive.Name} (Định dạng: {drive.DriveFormat})");
-                Console.WriteLine($"      Dung lượng: {freeSpace:F2} GB trống / {totalSize:F2} GB tổng");
-            }
+            double total = drive.TotalSize / (1024.0 * 1024 * 1024);
+            double free = drive.AvailableFreeSpace / (1024.0 * 1024 * 1024);
+
+            Row($"Ổ đĩa {drive.Name}",
+                $"{free:F2} GB trống / {total:F2} GB ({drive.DriveFormat})");
         }
 
-        Console.WriteLine("\n------------------------------------------------");
-        Console.WriteLine("Nhấn phím bất kỳ để thoát...");
-        Console.ReadKey();
+        Line();
     }
 }
