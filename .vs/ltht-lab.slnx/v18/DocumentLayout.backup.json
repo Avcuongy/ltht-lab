@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\_Projects\\ltht-lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F2236CD-DAD2-42F2-A40D-9D1F0B153E9C}|ltht-lab.csproj|b:\\_projects\\ltht-lab\\main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F2236CD-DAD2-42F2-A40D-9D1F0B153E9C}|ltht-lab.csproj|solutionrelative:main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "B:\\_Projects\\ltht-lab\\main\\Program.cs",
+              "RelativeDocumentMoniker": "main\\Program.cs",
+              "ToolTip": "B:\\_Projects\\ltht-lab\\main\\Program.cs",
+              "RelativeToolTip": "main\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T09:01:51.176Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
