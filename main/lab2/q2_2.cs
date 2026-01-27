@@ -20,7 +20,7 @@ class DataClass
     public int C;
 }
 
-public class q2
+public class q2_2
 {
     const int SIZE = 5_000_000;
 

@@ -18,7 +18,7 @@ class PointClass
     public int Y;
 }
 
-public class q1
+public class q2_1
 {
     public static void Solution()
     {

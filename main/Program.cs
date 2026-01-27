@@ -11,7 +11,7 @@ namespace ltht_lab
     {
         static void Main(string[] args)
         {
-            lab2.Solution();
+            lab3.Solution();
             Console.ReadKey();
         }
     }

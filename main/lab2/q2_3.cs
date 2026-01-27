@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-public class q3
+public class q2_3
 {
     public static void Solution()
     {

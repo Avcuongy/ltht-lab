@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
 
-public class q5
+public class q2_5
 {
     public static void Solution()
     {
