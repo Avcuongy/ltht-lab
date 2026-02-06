@@ -10,3 +10,4 @@ vscode/
 *.tmp
 *.cache
 .vscode/
+packages/
