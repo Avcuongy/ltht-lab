@@ -7,14 +7,13 @@ using System.IO;
 
 namespace ltht_lab
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //lab1.Solution();
-            //lab2.Solution();
-            //lab3.Solution();
-            lab4.Solution();
+            Console.OutputEncoding = Encoding.UTF8;
+
+            // place here lab5 (Client/Server)
 
             Console.ReadKey();
         }
