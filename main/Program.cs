@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ltht_lab.lab.lab6.q6_3;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace ltht_lab
 {
@@ -13,7 +15,7 @@ namespace ltht_lab
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            // place here lab5 (Client/Server)
+
 
             Console.ReadKey();
         }
